@@ -12,21 +12,6 @@ data:
           addons:
             upgrade:
               - community_org_base
-        - version: 0.0.1
-          addons:
-            upgrade:
-              - community_org_install
-        - version: 0.0.2
-          addons:
-            upgrade:
-              - all
-        - version: 0.0.3
-          addons:
-            upgrade:
-              - all
-        - version: 0.0.4
-          addons:
-            upgrade:
               - community_org_install
 kind: ConfigMap
 metadata:
@@ -128,8 +113,6 @@ spec:
           value: "false"
         - name: MARABUNTA_MODE
           value: demo
-        - name: MARABUNTA_FORCE_VERSION
-          value: 0.0.4
         - name: PATH
           value: /usr/local/bin:/odoo/odoo-bin:/odoo/.local/bin:/home/nils/.local/bin:/home/nils/.krew/bin:/home/nils/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
         - name: RUNNING_ENV
@@ -224,7 +207,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: odoo-community.k8s.onestein.eu
+  - host: odoo-ubports.ch.smoose.cloud
     http:
       paths:
       - backend:
@@ -243,5 +226,5 @@ spec:
         pathType: ImplementationSpecific
   tls:
   - hosts:
-    - odoo-community.k8s.onestein.eu
-    secretName: odoo-community.k8s.onestein.eu-tls
+    - odoo-ubports.ch.smoose.cloud
+    secretName: odoo-ubports.ch.smoose.cloud-tls
